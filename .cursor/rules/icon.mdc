@@ -1,0 +1,52 @@
+---
+description: icon图标
+globs: *.html
+---
+## Font Awesome 图标使用规则
+
+1.  **引入 Font Awesome CSS：**
+
+    *   在你的 HTML 文件中，通过 `<link>` 标签引入 Font Awesome 的 CSS 文件。你可以使用 CDN 链接，也可以下载到本地引入。
+
+        ```html
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        ```
+
+2.  **使用图标：**
+
+    *   在你的 HTML 文件中，使用 `<i>` 标签来显示图标。
+    *   通过类名 `fas` (Font Awesome Solid) 和 `fa-home` (Home 图标) 来指定要显示的图标。
+
+        ```html
+        <i class="fas fa-home"></i>
+        ```
+
+3.  **自定义样式：**
+
+    *   你可以通过 CSS 来自定义图标的样式，例如大小、颜色、间距等。
+
+        ```css
+        .icon {
+          font-size: 3rem;
+          color: blue;
+          margin: 1rem;
+        }
+        ```
+
+## 示例
+
+```html
+<i class="fas fa-home icon"></i>  <i class="fas fa-user icon"></i>  <i class="fas fa-cog icon"></i>
+```
+
+## 注意事项
+
+*   **Font Awesome 版本：** 请注意 Font Awesome 的版本号，不同版本可能有不同的图标和类名。
+*   **图标库：** Font Awesome 提供了多种图标库，如 Solid、Regular、Light、Brands 等，你需要根据需要选择合适的图标库。
+*   **类名：** Font Awesome 的类名有一定的命名规则，你需要了解这些规则才能正确使用图标。
+*   **CDN：** 如果你使用 CDN 链接，请确保你的网络连接正常，否则可能无法加载图标。
+
+## 建议
+
+*   **Font Awesome 官网：** 访问 Font Awesome 官网 ([https://fontawesome.com/](https://www.google.com/url?sa=E&source=gmail&q=https://fontawesome.com/)) 可以查看最新的图标库、类名和使用方法。
+*   **在线图标库：** 除了 Font Awesome，还有其他一些优秀的在线图标库，如 iconfont ([https://www.iconfont.cn/](https://www.google.com/url?sa=E&source=gmail&q=https://www.iconfont.cn/))、Material Icons ([https://fonts.google.com/icons](https://www.google.com/url?sa=E&source=gmail&q=https://fonts.google.com/icons)) 等，你可以根据自己的需求选择合适的图标库。

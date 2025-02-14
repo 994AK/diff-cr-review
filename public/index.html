@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="expression" readonly />
+        <div id="result"></div>
+      </div>
+      <div class="buttons">
+        <button class="operator" data-value="(">
+          <i class="fas fa-parentheses"></i>(
+        </button>
+        <button class="operator" data-value=")">
+          <i class="fas fa-parentheses"></i>)
+        </button>
+        <button class="clear" data-value="C">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        <button class="delete" data-value="←">
+          <i class="fas fa-backspace"></i>
+        </button>
+
+        <button class="number" data-value="7">7</button>
+        <button class="number" data-value="8">8</button>
+        <button class="number" data-value="9">9</button>
+        <button class="operator" data-value="/">
+          <i class="fas fa-divide"></i>
+        </button>
+
+        <button class="number" data-value="4">4</button>
+        <button class="number" data-value="5">5</button>
+        <button class="number" data-value="6">6</button>
+        <button class="operator" data-value="*">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <button class="number" data-value="1">1</button>
+        <button class="number" data-value="2">2</button>
+        <button class="number" data-value="3">3</button>
+        <button class="operator" data-value="-">
+          <i class="fas fa-minus"></i>
+        </button>
+
+        <button class="number" data-value="0">0</button>
+        <button class="number" data-value=".">.</button>
+        <button class="equals" data-value="=">
+          <i class="fas fa-equals"></i>
+        </button>
+        <button class="operator" data-value="+">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+    <script>
+      // Initialize calculator
+      const calculator = new Calculator();
+      const expression = document.getElementById("expression");
+      const result = document.getElementById("result");
+
+      // Add event listeners to all buttons
+      document.querySelectorAll(".buttons button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = button.dataset.value;
+
+          if (value === "C") {
+            // Clear
+            expression.value = "";
+            result.textContent = "";
+          } else if (value === "←") {
+            // Delete last character
+            expression.value = expression.value.slice(0, -1);
+          } else if (value === "=") {
+            try {
+              // Evaluate expression
+              const answer = calculator.evaluate(expression.value);
+              result.textContent = "= " + answer;
+              expression.value = answer;
+            } catch (error) {
+              result.textContent = "Error: " + error.message;
+            }
+          } else {
+            // Add character to expression
+            expression.value += value;
+          }
+        });
+      });
+
+      // Add keyboard support
+      document.addEventListener("keydown", (event) => {
+        const key = event.key;
+        const button = document.querySelector(`button[data-value="${key}"]`);
+        if (button) {
+          button.click();
+          event.preventDefault();
+        } else if (key === "Enter") {
+          document.querySelector('button[data-value="="]').click();
+          event.preventDefault();
+        } else if (key === "Backspace") {
+          document.querySelector('button[data-value="←"]').click();
+          event.preventDefault();
+        } else if (key === "Escape") {
+          document.querySelector('button[data-value="C"]').click();
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

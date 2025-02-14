@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+.calculator {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 320px;
+}
+
+.display {
+  background: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#expression {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  text-align: right;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+#result {
+  color: #6c757d;
+  font-size: 1.2em;
+  min-height: 1.2em;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  border: none;
+  background: #fff;
+  font-size: 1.2em;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+button i {
+  font-size: 1em;
+}
+
+button.number {
+  font-size: 1.4em;
+}
+
+button:hover {
+  background: #f8f9fa;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.number {
+  background: #f8f9fa;
+}
+
+.operator {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.equals {
+  background: #007bff;
+  color: white;
+}
+
+.equals:hover {
+  background: #0056b3;
+}
+
+.clear {
+  background: #dc3545;
+  color: white;
+}
+
+.clear:hover {
+  background: #c82333;
+}
+
+.delete {
+  background: #ffc107;
+  color: #212529;
+}
+
+.delete:hover {
+  background: #e0a800;
+}
+
+/* Icon-specific styles */
+.fa-trash-alt {
+  font-size: 0.9em;
+}
+
+.fa-backspace {
+  font-size: 0.9em;
+}
+
+.fa-divide,
+.fa-times,
+.fa-minus,
+.fa-plus,
+.fa-equals {
+  font-size: 1em;
+}
