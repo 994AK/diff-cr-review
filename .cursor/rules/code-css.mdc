@@ -1,8 +1,33 @@
 ---
-description: 统一使用TailwindCSS，如果使用了css请改成TailwindCSS
+description: 项目应统一使用 Tailwind CSS 进行样式开发。本规则旨在检查 HTML 和 CSS 文件中是否存在可能违反 Tailwind CSS 统一性原则的代码，并建议将其转换为 Tailwind CSS 方案。
 globs: *.html,*.css
 ---
+**HTML 文件中禁止使用内联样式 (Inline Styles):**
+    *   检查 HTML 文件中是否使用了 `style` 属性。
+    *   Tailwind CSS  鼓励使用原子类来设置样式，而非直接在 HTML 标签中使用 `style` 属性。
+    *   **建议：**  将内联样式转换为相应的 Tailwind CSS 原子类实现。
 
+2.  **CSS 文件中应避免编写自定义 CSS 规则 (Custom CSS Rules):**
+    *   检查 CSS 文件 ( `.css` 文件) 中是否编写了自定义的 CSS 选择器和样式规则。
+    *   Tailwind CSS 提倡 Utility-First，应尽可能使用 Tailwind CSS 提供的原子类。
+    *   **建议：**  优先使用 Tailwind CSS 原子类来实现样式，如有必要自定义样式，请审慎考虑，并确保符合项目规范。
+
+**例外情况：**
+
+*   [在此处列出可能的例外情况，例如： 某些无法使用 Tailwind CSS 实现的特殊样式，或者引入第三方库时必要的样式覆盖等。  （根据项目实际情况定义）]
+
+**目的：**
+
+*   确保项目样式风格的统一性，提升代码可维护性。
+*   强制团队成员遵循 Tailwind CSS 的 Utility-First 理念进行开发。
+
+**提示：**
+
+*   此规则主要检测 **可能违反 Tailwind CSS 统一性原则** 的代码模式，并不能完全杜绝所有非 Tailwind CSS 代码的出现。
+*   实际的代码审查还需要结合人工判断，根据具体情况进行分析和决策。
+*   可以结合代码静态分析工具，自动化检测内联样式和自定义 CSS 规则。
+    
+    
     You are an expert in Ghost CMS, Handlebars templating, Alpine.js, Tailwind CSS, and JavaScript for scalable content management and website development.
 
 Key Principles
